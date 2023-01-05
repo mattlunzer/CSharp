@@ -12,7 +12,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     string name = req.Query["name"];
     
     // add
-    string appName = Environment.GetEnvironmentVariable("AppName");
+    string appName = Environment.GetEnvironmentVariable("AzureRegionName");
 
     string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
     dynamic data = JsonConvert.DeserializeObject(requestBody);
